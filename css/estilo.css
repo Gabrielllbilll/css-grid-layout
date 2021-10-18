@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/*RESETAÇÃO DE ESPAÇAMENTO DOS NAVEGADORES*/
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, 'cursive';
+    font-size: 1.2em;
+
+}
+
+body {}
+#main {
+
+    /*display: grid ->
+
+    -> GRID
+
+      *!*!*!O QUE ELE FAZ DEFINE QUE NOS TRABALHAREMOS UM TODO
+      ESTRUTURA APARTIR DOS FILHOS DO ELEMENTO PAI;!*!*!*
+
+    ->
+
+    */
+
+    display: grid;
+
+    /* grid-template-areas "header header";
+    
+    ->
+
+        VOU TRABALHAR COM OS ELEMENTOS FILHOS DE UM PAI EM FORMA DE 
+        COLUNAS E MARCAREI DUAS COLUNAS PARA CADA ELEMENTO FILHO.
+
+    ->
+
+    */
+
+    grid-template-areas: "header header" "nav nav" "Article aside" "footer footer";
+
+    /*grid-template-rows: 15vh 10vh 55vh 20vh;
+    
+    ->
+
+        ELE ESPECIFICA PARA CADA ELEMENTO FILHO GRID A ALTURA  
+
+    ->
+
+    */
+
+    grid-template-rows: 15vh 10vh 55vh 20vh;
+
+}
+
+.mainHeader {
+
+    grid-area: header;
+    background-color: rgb(242, 255, 0);
+
+}
+
+.mainNav {
+
+    grid-area: nav;
+    background-color: red;
+
+}
+
+.mainArticle {
+
+    grid-area: Article;
+    background-color: green;
+
+}
+
+.mainAside {
+
+    grid-area: aside;
+    background-color: blue;
+
+}
+
+.mainFooter {
+
+    grid-area: footer;
+    background-color: rgb(255, 77, 0);
+
+}
+
+    /* BREAKPOINTS */
+
+@media screen and (max-width: 768px) {
+
+    body {
+
+        background-color: #cdcdcd;
+
+    }
+
+    #main {
+
+        grid-template-areas: "header" "Article" "aside" "footer";
+
+    }
+
+    .mainNav {
+
+        grid-area: header;
+        margin-top: 1.9rem;
+
+    }
+
+}
